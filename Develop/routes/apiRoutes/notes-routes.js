@@ -16,5 +16,7 @@ router.get('/notes', (req, res) => {
 router.post('notes', (req, res) => {
     req.newNote.id = notes.length.toString();
     let note = createNote(req.newNote, notes);
-    res.json(note)
+    res.json(note);
 })
+
+module.export = router;
