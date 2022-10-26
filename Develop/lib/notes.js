@@ -1,11 +1,18 @@
 var fs = require('fs');
-var PATH = require('path');
+var path = require('path');
 
 function createNote(newNote, allNotes) {
-    allNotes.push(newNote);
+    const note = newNote;
+    allNotes.push(note);
     fs.writeFileSync(
-        PATH.join(__dirname, '../db/db.json'),
-        JSON.stringify(allNotes)
-    );
-    return allNotes;
+        path.join(__dirname, '../db/db.json'),
+        JSON.stringify({
+            allNotes
+        }, null, 2)
+    )
+    return newNote;
+}
+
+module.exports = {
+    createNote,
 }
