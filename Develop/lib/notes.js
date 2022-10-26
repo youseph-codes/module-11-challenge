@@ -1,5 +1,5 @@
-const fs = require('fs');
-const PATH = require('path');
+var fs = require('fs');
+var PATH = require('path');
 
 function createNote(newNote, allNotes) {
     allNotes.push(newNote);
